@@ -1,0 +1,119 @@
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2.5rem;
+  background-color: var(--surface-color);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.app-branding {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+.logo-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  /* Flashy gradient background */
+  background: linear-gradient(45deg, #76ABAE, #a2d2d4);
+  color: var(--background-color);
+  font-weight: 700;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.app-branding:hover .logo-icon {
+  transform: rotate(15deg) scale(1.1); /* Fun hover effect */
+}
+
+
+.app-title-link {
+  text-decoration: none;
+}
+
+.app-title {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-color);
+  /* Vibrant gradient text */
+  background: linear-gradient(45deg, #EEEEEE, #a2d2d4);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* === User Navigation & Profile Icon === */
+.user-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.profile-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--primary-color); /* Primary color for the background */
+  color: var(--background-color);      /* Contrasting text color for the initial */
+  text-decoration: none;
+  overflow: hidden;                     /* Keeps the image inside the circle */
+  transition: transform 0.2s ease-out, box-shadow 0.2s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); /* Adds depth */
+}
+
+.profile-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(118, 171, 174, 0.5);
+}
+
+.profile-icon-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers the circle */
+}
+
+.profile-icon-initial {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.logout-btn-header {
+  padding: 8px 16px;
+  background-color: var(--surface-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+.logout-btn-header:hover {
+  background-color: var(--danger-color);
+  border-color: var(--danger-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* === Main App Content Area === */
+.app-content {
+  padding: 2.5rem;
+}

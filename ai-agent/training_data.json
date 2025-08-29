@@ -1,0 +1,45 @@
+{
+  "Food": [
+    "groceries from supermarket", "dinner at restaurant", "coffee shop", "pizza delivery",
+    "lunch with colleagues", "burger king", "kfc chicken", "monthly groceries", "vegetables", "milk and bread",
+    "swiggy order", "zomato food delivery", "bakery items", "office lunch", "snack items", "ice cream", "weekly groceries"
+  ],
+  "Transportation": [
+    "monthly bus pass", "gas for the car", "uber ride to airport", "train ticket", "bus ticket",
+    "parking fee downtown", "taxi fare", "flight ticket booking", "metro card recharge", "car maintenance",
+    "ola auto ride", "petrol fill-up", "vehicle service", "new tires", "airport drop"
+  ],
+  "Housing": [
+    "monthly rent payment", "home repairs", "plumbing service", "new furniture", "mortgage payment",
+    "apartment maintenance fee", "painting work", "home loan EMI", "property tax"
+  ],
+  "Utilities": [
+    "electricity bill", "internet bill", "water bill", "phone bill", "gas cylinder",
+    "mobile recharge", "wifi connection fee", "dth recharge", "broadband bill"
+  ],
+  "Shopping": [
+    "new shirt and jeans", "amazon purchase electronics", "shoes from nike", "ikea furniture",
+    "clothing purchase", "new laptop", "bookstore purchase", "online shopping",
+    "flipkart order", "myntra clothes", "mobile phone", "gadget purchase", "household items"
+  ],
+  "Entertainment": [
+    "movie tickets", "spotify subscription", "netflix monthly fee", "concert tickets",
+    "bowling with friends", "video game purchase", "youtube premium", "weekend getaway",
+    "hotstar subscription", "amusement park", "gaming cafe", "live match ticket"
+  ],
+  "Healthcare": [
+    "doctor's visit co-pay", "pharmacy prescription medicine", "dental check-up",
+    "eye exam", "health insurance premium", "hospital bill", "medical test", "apollo pharmacy"
+  ],
+  "Education": [
+    "college fees", "online course subscription", "udemy course", "coursera fee",
+    "school tuition", "textbooks purchase", "stationary items"
+  ],
+  "Personal Care": [
+    "haircut", "gym membership", "salon visit", "cosmetics", "spa treatment"
+  ],
+  "General": [
+    "gift for friend", "post office stamps", "bank fee", "charity donation", "laundry service",
+    "atm withdrawal fee", "miscellaneous expense", "unclassified purchase"
+  ]
+}

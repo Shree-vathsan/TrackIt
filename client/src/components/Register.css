@@ -1,0 +1,79 @@
+.auth-form-container {
+  max-width: 480px; /* Slightly wider for better spacing */
+  width: 100%;
+  margin: 4rem auto; /* More vertical margin to center it nicely */
+  padding: 2.5rem;
+  background-color: var(--surface-color);
+  border-radius: var(--border-radius-lg); /* Softer, larger radius */
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Increased gap for better spacing */
+  width: 100%;
+}
+
+.register-form h2 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 2rem;
+  margin: 0 0 1rem 0;
+  color: var(--primary-color);
+}
+
+.register-form input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  box-sizing: border-box;
+  font-size: 1rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.register-form input::placeholder {
+  color: var(--text-color-secondary);
+}
+
+.register-form input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(118, 171, 174, 0.3); /* Glow effect */
+}
+
+.register-form input[type='submit'] {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1rem;
+  border: none;
+  transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.register-form input[type='submit']:hover {
+  background-color: #8ac0c3; /* Slightly lighter teal */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(118, 171, 174, 0.3);
+}
+
+.auth-switch-link {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--text-color-secondary);
+}
+
+.auth-switch-link a {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-switch-link a:hover {
+  text-decoration: underline;
+}

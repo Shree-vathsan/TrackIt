@@ -1,0 +1,213 @@
+/* Main Container */
+.profile-container {
+  padding: 2.5rem;
+  background-color: var(--surface-color);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  max-width: 700px;
+  margin: 2rem auto;
+  border: 1px solid var(--border-color);
+}
+
+.profile-container h2 {
+  color: var(--primary-color);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  margin-top: 0;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* Section Layout */
+.profile-section {
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border-color);
+}
+.profile-section:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.section-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.edit-toggle-btn {
+  background: none;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 8px 16px;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+.edit-toggle-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(118, 171, 174, 0.3);
+}
+
+/* General Form Styles */
+.profile-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.profile-section form label {
+  font-weight: 500;
+  color: var(--text-color-secondary);
+  margin-bottom: -0.5rem;
+}
+
+.profile-section form input {
+  padding: 14px 16px;
+  border-radius: var(--border-radius-md);
+  font-size: 1rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.profile-section form input::placeholder {
+  color: var(--text-color-secondary);
+}
+
+.profile-section form input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(118, 171, 174, 0.3);
+}
+
+.profile-section form input:disabled {
+  background-color: var(--surface-color);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Profile Photo Uploader */
+.profile-photo-container {
+  position: relative;
+  cursor: pointer;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1.5rem auto;
+  border-radius: 50%;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--primary-color);
+  display: block;
+  background-color: var(--surface-color);
+}
+    
+.photo-edit-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.profile-photo-container:hover .photo-edit-overlay {
+  opacity: 1;
+}
+
+.edit-icon {
+  font-size: 2.5rem;
+}
+
+.photo-edit-overlay p {
+  margin: 0;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* Form Action Buttons (Save/Cancel) */
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.form-actions button {
+  flex: 1;
+  padding: 14px;
+  border-radius: var(--border-radius-md);
+  font-size: 1.1rem;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-actions button[type="submit"] {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+.form-actions button[type="submit"]:hover {
+  background-color: #8ac0c3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(118, 171, 174, 0.3);
+}
+
+.form-actions .cancel-btn {
+  background-color: var(--surface-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+.form-actions .cancel-btn:hover {
+  background-color: var(--border-color);
+}
+
+/* Feedback Messages */
+.success-message {
+  color: var(--success-color);
+  background-color: rgba(102, 187, 106, 0.15);
+  padding: 12px;
+  border-radius: var(--border-radius-md);
+  text-align: center;
+  margin: 0;
+  font-weight: 500;
+}
+
+.error-message {
+  color: var(--danger-color);
+  background-color: rgba(239, 83, 80, 0.15);
+  padding: 12px;
+  border-radius: var(--border-radius-md);
+  text-align: center;
+  margin: 0;
+  font-weight: 500;
+}
