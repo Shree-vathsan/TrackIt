@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom'; // 1. Import Link
-import axios from 'axios';
+// import axios from 'axios';
+import API from '../api';
 import { toast } from 'react-toastify';
 import './Register.css';
 
@@ -23,7 +24,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const newUser = { name, email, password };
-      await axios.post('/api/auth/register', newUser);
+      await API.post('/auth/register', newUser);
 
       
       

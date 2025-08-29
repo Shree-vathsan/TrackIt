@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
+import API from '../api';
 import { toast } from 'react-toastify';
 import { useDropzone } from 'react-dropzone';
 import './Profile.css';
@@ -25,7 +26,7 @@ const Profile = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const res = await axios.get('/api/users/profile');
+        const res = await API.get('/users/profile');
         setProfileData(res.data);
       } catch (err) {
         setProfileMessage({ text: 'Could not fetch profile data.', type: 'error' });
@@ -43,7 +44,7 @@ const Profile = () => {
 
     try {
       setProfileMessage({ text: 'Uploading...', type: 'success' });
-      await axios.post('/api/users/profile/upload', formData, {
+      await API.post('/users/profile/upload', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       
@@ -71,7 +72,7 @@ const Profile = () => {
     e.preventDefault();
     setProfileMessage({ text: '', type: '' });
     try {
-      const res = await axios.put('/api/users/profile', profileData);
+      const res = await API.put('/users/profile', profileData);
       updateUser(res.data);
       toast.success('Profile updated successfully!'); // Success notification
       setIsProfileEditing(false);
@@ -87,7 +88,7 @@ const Profile = () => {
       return setPasswordMessage({ text: 'New passwords do not match.', type: 'error' });
     }
     try {
-      const res = await axios.put('/api/auth/changepassword', 
+      const res = await API.put('/auth/changepassword', 
         {
         currentPassword: passwordData.currentPassword,
         newPassword: passwordData.newPassword,

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
+import API from '../api';
 import { toast } from 'react-toastify';
 
 const Budget = ({ summaryData }) => {
@@ -10,7 +11,7 @@ const Budget = ({ summaryData }) => {
   // Fetch existing budgets for the month
   const getBudgets = async () => {
     try {
-      const res = await axios.get('/api/budgets');
+      const res = await API.get('/budgets');
       // Convert array to a map for easy lookup: { food: 1000, shopping: 500 }
       const budgetMap = res.data.reduce((acc, budget) => {
         acc[budget.category] = budget.amount;
@@ -35,7 +36,7 @@ const Budget = ({ summaryData }) => {
     }
     try {
       // Send the category in lowercase to maintain consistency
-      const res = await axios.post('/api/budgets', { category: category.toLowerCase(), amount });
+      const res = await API.post('/budgets', { category: category.toLowerCase(), amount });
       
       // Update the state with the new budget
       setBudgets({ ...budgets, [res.data.category]: res.data.amount });

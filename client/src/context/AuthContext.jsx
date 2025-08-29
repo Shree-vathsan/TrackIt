@@ -1,6 +1,6 @@
 // client/src/context/AuthContext.jsx
 import React, { createContext, useState, useEffect } from 'react';
-import axios from 'axios';
+import API from '../api';
 
 // 1. Create the context
 const AuthContext = createContext();
@@ -19,11 +19,11 @@ const AuthProvider = ({ children }) => {
     const token = localStorage.getItem('token');
     if (token) {
       // Set the token in axios headers for all future requests
-      axios.defaults.headers.common['x-auth-token'] = token;
+      API.defaults.headers.common['x-auth-token'] = token;
       try {
         // Here you would typically fetch user data
         // For now, we'll just validate the token's existence
-        const res = await axios.get('/api/auth');
+        const res = await API.get('/auth');
 
         setAuth({
           token: token,
@@ -60,7 +60,7 @@ const AuthProvider = ({ children }) => {
   // Logout function
   const logout = () => {
     localStorage.removeItem('token');
-    delete axios.defaults.headers.common['x-auth-token'];
+    delete API.defaults.headers.common['x-auth-token'];
     setAuth({
       token: null,
       isAuthenticated: false,

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext, useCallback } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
+import API from '../api';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../context/AuthContext.jsx';
@@ -24,7 +25,7 @@ const Dashboard = () => {
   const getExpenses = useCallback(async (filters, page = 1) => {
     try {
       const queryParams = { ...filters, page };
-      const res = await axios.get('/api/expenses', { params: queryParams });
+      const res = await API.get('/expenses', { params: queryParams });
       
       setExpenses(res.data.expenses);
       setPagination({
@@ -39,7 +40,7 @@ const Dashboard = () => {
   // Fetches the summary data for the chart and budget
   const getSummary = useCallback(async () => {
     try {
-      const res = await axios.get('/api/expenses/summary');
+      const res = await API.get('/expenses/summary');
       setSummaryData(res.data);
     } catch (err) {
       console.error(err.message);
@@ -64,7 +65,7 @@ const Dashboard = () => {
   // Adds a new expense
   const addExpense = async (formData) => {
     try {
-      await axios.post('/api/expenses', formData);
+      await API.post('/expenses', formData);
       getExpenses(activeFilters, 1); // Refresh expenses to page 1
       getSummary();
       toast.success('Expense Added!');
@@ -76,7 +77,7 @@ const Dashboard = () => {
 
   const updateExpense = async (id, updatedData) => {
     try {
-      const res = await axios.put(`/api/expenses/${id}`, updatedData);
+      const res = await API.put(`/expenses/${id}`, updatedData);
       // Update the expense in the list
       setExpenses(
         expenses.map((expense) => (expense._id === id ? res.data : expense))
@@ -93,7 +94,7 @@ const Dashboard = () => {
   // Deletes an expense
    const deleteExpense = async (id) => {
     try {
-      await axios.delete(`/api/expenses/${id}`);
+      await API.delete(`/expenses/${id}`);
       getExpenses(activeFilters, pagination.currentPage); // Refresh current page
       getSummary();
       toast.success('Expense Deleted!');

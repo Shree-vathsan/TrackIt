@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+// import axios from 'axios';
+import API from '../api';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../context/AuthContext.jsx';
 import './Login.css';
@@ -21,7 +22,7 @@ const Login = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('/api/auth/login', { email, password });
+      const res = await API.post('/auth/login', { email, password });
       // The 'login' function from our context handles saving the token and reloading
       login(res.data.token);
     } catch (err) {
